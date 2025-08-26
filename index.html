@@ -1,235 +1,239 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>W AGENCY | Agencia de Marketing Digital</title>
-  <meta name="description" content="Branding, Diseño, Community Management, Meta Ads, Google Ads y Email Marketing para hacer crecer tu marca." />
-  <meta name="theme-color" content="#162b46" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#162b46',
-              light: '#3d79c3',
-              white: '#ffffff'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .glass { backdrop-filter: saturate(180%) blur(8px); background: rgba(22,43,70,0.7); }
-    .logo-white { filter: brightness(0) invert(1); }
-
-    /* Neutros y componentes */
-    .bg-soft { background: #f3f4f6; }
-    .border-soft { border-color: #e5e7eb; }
-    .card { background: #ffffff; border: 1px solid #e5e7eb; }
-    .section { padding-top: 5rem; padding-bottom: 5rem; }
-    .btn-primary { background: #3d79c3; color: #fff; }
-    .btn-primary:hover { background: #295387; }
-    .btn-ghost { border: 1px solid #cbd5e1; color: #0f172a; background: #fff; }
-    .btn-ghost:hover { background: #f8fafc; }
-
-    /* Marquee de logos */
-    @keyframes marquee { 0% { transform:translateX(0) } 100% { transform:translateX(-50%) } }
-    .logos-mask {
-      mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-    }
-    .logos-track {
-      display:flex;
-      gap:3rem;
-      width:max-content;
-      animation: marquee 22s linear infinite;
-    }
-    .logos-item { height:48px; display:flex; align-items:center; justify-content:center; }
-    .logos-item img {
-      height:100%;
-      width:auto;
-      object-fit:contain;
-      filter:grayscale(100%);
-      opacity:.8;
-      transition:opacity .2s, filter .2s;
-    }
-    .logos-item img:hover { filter:none; opacity:1; }
-    .logos-wrapper:hover .logos-track { animation-play-state: paused; }
-    @media (max-width:640px){ .logos-item{ height:40px } }
-  </style>
-</head>
-<body class="bg-brand text-white">
-
-  <!-- Navbar -->
-  <header class="fixed top-0 inset-x-0 z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between rounded-2xl mt-3 px-4 py-3 glass shadow-md">
-        <a href="#home" class="flex items-center font-semibold">
-          <img src="assets/img/LOGO-BLANCO.svg" alt="W Agency Logo" class="h-24 w-auto logo-white"/>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="#servicios" class="hover:text-brand-light">Servicios</a>
-          <a href="#clientes" class="hover:text-brand-light">Clientes</a>
-          <a href="#contacto" class="inline-flex items-center gap-2 rounded-xl btn-primary px-4 py-2">Contacto</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden pt-32 pb-16 bg-brand">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 class="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Soluciones de Marketing Digital
-          </h1>
-          <p class="mt-4 text-xl font-medium text-gray-200">
-            Para que conectes tu negocio con más clientes todos los días.
-          </p>
-          <p class="mt-4 text-lg text-gray-300">
-            Branding, Diseño Gráfico, Community Management, Meta Ads, Google Ads y Email Marketing.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#contacto" class="rounded-xl px-5 py-3 btn-primary font-semibold">Quiero mi propuesta</a>
-            <a href="#servicios" class="rounded-xl px-5 py-3 btn-ghost font-semibold">Ver servicios</a>
-          </div>
-        </div>
-
-        <!-- SOLO UNA IMAGEN GRANDE -->
-        <div class="relative">
-          <img src="assets/img/imagen-pri.svg" alt="Imagen principal" class="rounded-2xl shadow-2xl w-full h-auto object-contain"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios -->
-  <section id="servicios" class="section bg-soft text-slate-900">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight">Servicios</h2>
-        <p class="mt-2 text-slate-600">Lo que hacemos para impulsar tu marca en cada etapa.</p>
-      </div>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Branding</h3>
-          <p class="mt-2 text-sm text-slate-600">Identidad, logotipo, manual de marca y sistema visual.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Branding">
-        </div>
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Diseño Gráfico</h3>
-          <p class="mt-2 text-sm text-slate-600">RRSS, presentaciones, flyers y creatividades para pauta.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Diseño gráfico">
-        </div>
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Community Management</h3>
-          <p class="mt-2 text-sm text-slate-600">Estrategia, calendario, copys y moderación.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1724754609250-fa57e82a93a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Community">
-        </div>
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Meta Ads</h3>
-          <p class="mt-2 text-sm text-slate-600">Campañas en Facebook/Instagram con foco en ROAS.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1665799871677-f1fd17338b43?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Meta Ads">
-        </div>
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Google Ads</h3>
-          <p class="mt-2 text-sm text-slate-600">Search, Performance Max y YouTube.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Google Ads">
-        </div>
-        <div class="rounded-2xl card p-6 hover:shadow-lg transition">
-          <h3 class="mt-2 font-semibold text-lg">Email Marketing</h3>
-          <p class="mt-2 text-sm text-slate-600">Automatizaciones, newsletters y flows de recuperación.</p>
-          <img class="mt-4 rounded-xl w-full h-36 object-cover" src="https://images.unsplash.com/photo-1586953208270-767889fa9b0e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Email">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Clientes (logos animados) -->
-  <section id="clientes" class="section bg-white text-slate-900">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight">Clientes</h2>
-        <p class="mt-2 text-slate-600">Marcas que confían en nosotros.</p>
-      </div>
-      <div class="logos-wrapper relative overflow-hidden mt-10 logos-mask">
-        <div class="logos-track">
-          <!-- Track A -->
-          <div class="logos-item"><img src="https://s3.amazonaws.com/media.wishpond.com/media/002/030/885/original.png?1403907177" alt="SASS GLOBAL TRAVEL"></div>
-          <div class="logos-item"><img src="https://sistolecuidados.com.ar/wp-content/uploads/2024/05/marca-sistole-sin-fondo-full-color_Mesa-de-trabajo-1-1-e1717083127386.png" alt="SISTOLE"></div>
-          <div class="logos-item"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Technogym_Logo.svg" alt="TECHNOGYM"></div>
-          <div class="logos-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyy12nFw0kwPT8EPHJpYgowVTxZejmGLeNmQ&s" alt="REMAX DATA HOUSEL"></div>
-          <div class="logos-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/1c/2b/4f/rincon-surf-school-and.jpg?w=1200&h=900&s=1" alt="RINCON SURF SCHOOL RESORT"></div>
-          <div class="logos-item"><img src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/43/686288743/logo-2025073113490523282.png" alt="OMG"></div>
-          <!-- Track B duplicado -->
-          <div class="logos-item"><img src="https://s3.amazonaws.com/media.wishpond.com/media/002/030/885/original.png?1403907177" alt="SASS GLOBAL TRAVEL"></div>
-          <div class="logos-item"><img src="https://sistolecuidados.com.ar/wp-content/uploads/2024/05/marca-sistole-sin-fondo-full-color_Mesa-de-trabajo-1-1-e1717083127386.png" alt="SISTOLE"></div>
-          <div class="logos-item"><img src="https://www.remax.com.ar/assets/images/seo/logo-remax-balloon.jpg" alt="REMAX"></div>
-          <div class="logos-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK1OW1NWgaVEx-JCfmMVUGRmvaeECq0AZiaQ&s" alt="VETERINARIA MUNDO ANIMAL"></div>
-          <div class="logos-item"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/1c/2b/4f/rincon-surf-school-and.jpg?w=1200&h=900&s=1" alt="RINCON SURF SCHOOL RESORT"></div>
-          <div class="logos-item"><img src="https://http2.mlstatic.com/storage/mshops-appearance-api/images/43/686288743/logo-2025073113490523282.png" alt="OMG"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="section bg-soft text-slate-900">
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight">Contacto</h2>
-        <p class="mt-2 text-slate-600">Completá el formulario y te responderemos en menos de 24 horas.</p>
-      </div>
-      <div class="mt-8 grid gap-8 lg:grid-cols-2">
-        <!-- Formulario -->
-        <form action="https://formspree.io/f/mandwppo" method="POST" class="rounded-2xl card p-6">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label class="text-sm font-medium">Nombre</label>
-              <input type="text" name="nombre" required class="mt-1 w-full rounded-xl border border-soft px-3 py-2" />
-            </div>
-            <div>
-              <label class="text-sm font-medium">Email</label>
-              <input type="email" name="email" required class="mt-1 w-full rounded-xl border border-soft px-3 py-2" />
-            </div>
-          </div>
-          <div class="mt-4">
-            <label class="text-sm font-medium">Mensaje</label>
-            <textarea name="mensaje" rows="5" required class="mt-1 w-full rounded-xl border border-soft px-3 py-2"></textarea>
-          </div>
-          <button type="submit" class="mt-6 rounded-xl px-5 py-3 btn-primary font-semibold">Enviar</button>
-        </form>
-
-        <!-- Datos de contacto -->
-        <div class="rounded-2xl card p-6">
-          <h3 class="font-semibold">Datos de contacto</h3>
-          <ul class="mt-3 space-y-2 text-slate-600 text-sm">
-            <li>📍 Buenos Aires, Argentina</li>
-            <li>
-              📱 
-              <a href="https://wa.me/5491162887691" target="_blank" class="text-brand-light hover:underline">
-                +54 9 11 6288-7691
-              </a>
-            </li>
-            <li>
-              ✉️ 
-              <a href="mailto:walshagencyy@gmail.com" class="text-brand-light hover:underline">
-                walshagencyy@gmail.com
-              </a>
-            </li>
-            <li>
-              📷 
-              <a href="https://instagram.com/w____agency" target="_blank" class="text-brand-light hover:underline">
-                @w____agency
-              </a>
-            </li>
-            <li>🌐 www.wagency.com.ar</li>
-          </ul>
-          <div class="mt-6">
-            <iframe class="w-full rounded-2xl h-64" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.938757395333!2d-58.3815923!3d-34.6041427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352a8e7b1fdf%3A0x2a0b2
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index 2717ba581d4a5857d8bcca11a05229ee4dc3a6ea..8f0ebb35d77a8a9d89fd2e145809e23b86c2e17c 100644
+--- a/index.html
++++ b/index.html
+@@ -1,43 +1,45 @@
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width" />
+   <title>W AGENCY | Agencia de Marketing Digital</title>
+   <meta name="description" content="Soluciones de Marketing Digital para que conectes tu negocio con más clientes todos los días." />
+   <link rel="stylesheet" href="styles.css" />
+ </head>
+ <body>
+ <div class="app">
+   <header class="header">
+     <nav class="nav container">
+       <a href="#" class="logo">W AGENCY</a>
+       <ul class="links">
+         <li><a href="#servicios">Servicios</a></li>
+         <li><a href="#portfolio">Portfolio</a></li>
++        <li><a href="#clientes">Clientes</a></li>
+         <li><a href="#planes">Planes</a></li>
++        <li><a href="#testimonios">Testimonios</a></li>
+         <li><a href="#contacto">Contacto</a></li>
+       </ul>
+       <a href="#contacto" class="btn btn-outline">¡Quiero!</a>
+     </nav>
+   </header>
+ 
+   <section class="hero container">
+     <div class="hero-left">
+       <span class="chip">🚀 Soluciones integrales</span>
+       <h1 class="hero-title">
+         <span>Soluciones de Marketing Digital</span>
+         <span class="highlight">para que conectes tu negocio</span>
+         <span>con más clientes todos los días</span>
+       </h1>
+       <p class="hero-sub">Nos encargamos de tu presencia online de principio a fin: estrategia, diseño, campañas y optimización.</p>
+       <div class="hero-ctas">
+         <a href="#contacto" class="btn">¡Quiero!</a>
+         <a href="#portfolio" class="btn btn-ghost">Ver proyectos</a>
+       </div>
+       <div class="kpis">
+         <div class="kpi">
+           <div class="kpi-big">100%</div>
+           <div class="kpi-small">Responsive</div>
+         </div>
+         <div class="kpi">
+diff --git a/index.html b/index.html
+index 2717ba581d4a5857d8bcca11a05229ee4dc3a6ea..8f0ebb35d77a8a9d89fd2e145809e23b86c2e17c 100644
+--- a/index.html
++++ b/index.html
+@@ -84,136 +86,174 @@
+       <div class="card">
+         <div class="card-title">Google Ads</div>
+         <p class="card-text">Anuncios dirigidos a clientes potenciales que buscan tus productos o servicios.</p>
+       </div>
+       <div class="card">
+         <div class="card-title">Páginas Web</div>
+         <p class="card-text">Desarrollo de sitios atractivos, rápidos y optimizados para SEO.</p>
+       </div>
+       <div class="card">
+         <div class="card-title">Email Marketing</div>
+         <p class="card-text">Automatizaciones y newsletters que convierten suscriptores en clientes.</p>
+       </div>
+     </div>
+   </section>
+ 
+   <section id="portfolio" class="section container">
+     <h2 class="section-title">Portfolio</h2>
+     <p class="muted">Algunos ejemplos de proyectos. Reemplazá las tarjetas con tus casos reales.</p>
+     <div class="grid">
+       
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 1</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto1.html">Ver caso</a>
+         </div>
+       </article>
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 2</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto2.html">Ver caso</a>
+         </div>
+       </article>
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 3</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto3.html">Ver caso</a>
+         </div>
+       </article>
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 4</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto4.html">Ver caso</a>
+         </div>
+       </article>
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 5</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto5.html">Ver caso</a>
+         </div>
+       </article>
+       <article class="card card-project">
+         <div class="thumb"></div>
+         <div class="card-body">
+           <h3 class="project-title">Proyecto 6</h3>
+           <p class="card-text">Descripción corta del proyecto y resultados logrados.</p>
+-          <a class="project-link" href="#">Ver caso</a>
++          <a class="project-link" href="caso-proyecto6.html">Ver caso</a>
+         </div>
+       </article>
+     </div>
+   </section>
+ 
++  <section id="clientes" class="section container">
++    <h2 class="section-title">Clientes</h2>
++    <p class="muted">Algunas marcas que confiaron en nosotros.</p>
++    <div class="logos">
++      <img src="https://www.logo.wine/a/logo/Google/Google-Logo.wine.svg" alt="Google" />
++      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
++      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" />
++      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Meta" />
++      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Spotify_logo_with_text.svg" alt="Spotify" />
++      <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Intel_logo_%282020%2C_dark_blue%29.svg" alt="Intel" />
++    </div>
++  </section>
++
+   <section id="planes" class="section container">
+     <h2 class="section-title">Planes</h2>
+     <p class="muted">Comenzá simple y evolucioná en etapas.</p>
+     <div class="grid plans">
+       <div class="plan card">
+         <div class="card-title">Starter</div>
+         <div class="plan-sub muted">Consultá por presupuesto</div>
+         <ul class="list">
+           <li>Landing 1 página</li>
+           <li>Formulario de contacto</li>
+           <li>Dominio conectado</li>
+           <li>SEO básico</li>
+         </ul>
+         <a href="#contacto" class="btn">Solicitar</a>
+       </div>
+       <div class="plan card">
+         <div class="card-title">Business</div>
+         <div class="plan-sub muted">Consultá por presupuesto</div>
+         <ul class="list">
+           <li>Hasta 5 secciones</li>
+           <li>Portfolio y Blog</li>
+           <li>Integraciones (Analytics, Meta Pixel)</li>
+           <li>Optimización SEO</li>
+         </ul>
+         <a href="#contacto" class="btn">Solicitar</a>
+       </div>
+       <div class="plan card">
+         <div class="card-title">E‑commerce</div>
+         <div class="plan-sub muted">Consultá por presupuesto</div>
+         <ul class="list">
+           <li>Catálogo y pagos</li>
+           <li>Email transaccional</li>
+           <li>Automatizaciones</li>
+           <li>Soporte prioritario</li>
+         </ul>
+         <a href="#contacto" class="btn">Solicitar</a>
+       </div>
+     </div>
+   </section>
+ 
++  <section id="testimonios" class="section container">
++    <h2 class="section-title">Testimonios</h2>
++    <p class="muted">Lo que dicen nuestros clientes.</p>
++    <div class="grid testimonials">
++      <div class="card">
++        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana López" class="avatar" />
++        <div class="name">Ana López</div>
++        <div class="role">CEO FitLife</div>
++        <p class="card-text">Trabajar con W Agency incrementó nuestras ventas en tiempo récord.</p>
++      </div>
++      <div class="card">
++        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Pérez" class="avatar" />
++        <div class="name">Carlos Pérez</div>
++        <div class="role">Founder TechX</div>
++        <p class="card-text">Su equipo se compromete y ofrece soluciones creativas.</p>
++      </div>
++      <div class="card">
++        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Luis Gómez" class="avatar" />
++        <div class="name">Luis Gómez</div>
++        <div class="role">CMO Gamer Fest</div>
++        <p class="card-text">La campaña superó todas nuestras expectativas.</p>
++      </div>
++    </div>
++  </section>
++
+   <section class="section container">
+     <h2 class="section-title">Preguntas frecuentes</h2>
+     <div class="grid faqs">
+       <div class="card">
+         <div class="card-title">¿Puedo usar mi dominio .com.ar?</div>
+         <p class="card-text">Sí. Registrás el dominio en NIC Argentina y lo apuntamos al hosting elegido.</p>
+       </div>
+       <div class="card">
+         <div class="card-title">¿La web es escalable?</div>
+         <p class="card-text">La arquitectura está pensada para crecer: más secciones, blog o tienda sin rehacer todo.</p>
+       </div>
+       <div class="card">
+         <div class="card-title">¿Incluye analítica?</div>
+         <p class="card-text">Incluimos Google Analytics 4 y eventos básicos para medir resultados.</p>
+       </div>
+       <div class="card">
+         <div class="card-title">¿Cómo contacto soporte?</div>
+         <p class="card-text">Tenés canal por WhatsApp y email. También podemos agregar mantenimiento mensual.</p>
+       </div>
+     </div>
+   </section>
+ 
+   <section id="contacto" class="section container contact">
+     <div class="card contact-card">
+       <h2 class="section-title">Hablemos</h2>
+ 
+EOF
+)
